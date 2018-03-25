@@ -4,11 +4,20 @@ public class Main
 {
     public static void main(String[] args)
     {
-        Animal animal = new Animal("Animal", 1, 5);
+        SearchTree tree = new SearchTree(null);
+        tree.traverse(tree.getRoot());
 
-        Dog dog = new Dog("Pudel", 8, 20, 2, 4);
+        String stringData = "5 7 3 9 8 1 0 4 4";
+//        String stringData = "Darwin Brisbane Perth Melbourne Canberra Adelaide Sydney Canberra";
 
-        dog.eat();
+        String[] data = stringData.split(" ");
+        for (String s: data) {
+            tree.addItem(new Node(s));
+        }
 
+        tree.traverse(tree.getRoot());
+
+        tree.removeItem(new Node("3"));
+        tree.traverse(tree.getRoot());
     }
 }
