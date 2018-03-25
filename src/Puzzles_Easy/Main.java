@@ -270,6 +270,25 @@ public class Main {
         return repeatedChar;
     }
 
+    /**
+     *
+     Given an array of strings, return the count of the number of strings with the given length
+     * <b>EXPECTATIONS:</b><br>
+     wordsCount({"a", "bb", "b", "ccc"}, 1) <b>---></b> 2<br>
+     wordsCount({"a", "bb", "b", "ccc"}, 3) <b>---></b> 1 <br>
+     wordsCount({"a", "bb", "b", "ccc"}, 4) <b>---></b> 0 <br>
+     */
+    public static int wordsCount(String[] words, int len) {
+        int totalCount = 0;
+
+        for (String word : words) {
+            if (word.length() == len) {
+                totalCount++;
+            }
+        }
+
+        return totalCount;
+    }
 
 
     public static void main(String[] args) {
@@ -291,6 +310,8 @@ public class Main {
 
 //        System.out.println(partialSum(1, 13, 3)); // 1
 
-        System.out.println(repeatChar("Hi-There")); // "HHii--TThheerree"
+//        System.out.println(repeatChar("Hi-There")); // "HHii--TThheerree"
+
+        System.out.println(wordsCount(new String[]{"a", "bb", "b", "ccc"}, 1)); // 2
     }
 }
